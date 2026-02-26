@@ -1,0 +1,118 @@
+<template>
+  <div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span>📋 Mes Commandes</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="menu-container">
+
+      <!-- Commande 1 -->
+      <div class="order-card">
+        <div class="order-header">
+          <div>
+            <div class="order-id">#142</div>
+            <div class="order-date">15 janvier 2024 à 12h30</div>
+          </div>
+          <span class="order-status retiree">RETIRÉE</span>
+        </div>
+        <div class="order-items">
+          <div class="order-item">
+            <span>2× Burger Classic</span>
+            <span>25.80€</span>
+          </div>
+          <div class="order-item">
+            <span>2× Coca-Cola</span>
+            <span>5.00€</span>
+          </div>
+        </div>
+        <div class="order-footer">
+          <span class="order-total">30.80€</span>
+          <button class="secondary-btn" style="width: auto; margin: 0;">Commander à nouveau →</button>
+        </div>
+      </div>
+
+      <!-- Commande 2 -->
+      <div class="order-card">
+        <div class="order-header">
+          <div>
+            <div class="order-id">#143</div>
+            <div class="order-date">18 janvier 2024 à 19h15</div>
+          </div>
+          <span class="order-status prete">PRÊTE !</span>
+        </div>
+        <div class="order-items">
+          <div class="order-item">
+            <span>1× Pasta Carbonara</span>
+            <span>14.50€</span>
+          </div>
+          <div class="order-item">
+            <span>1× Tiramisu</span>
+            <span>6.90€</span>
+          </div>
+        </div>
+        <div class="order-footer">
+          <span class="order-total">21.40€</span>
+          <button style="background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; cursor: pointer;">🔔 Me prévenir</button>
+        </div>
+      </div>
+
+      <!-- Commande 3 -->
+      <div class="order-card">
+        <div class="order-header">
+          <div>
+            <div class="order-id">#144</div>
+            <div class="order-date">20 janvier 2024 à 13h00</div>
+          </div>
+          <span class="order-status en-preparation">EN PRÉPARATION</span>
+        </div>
+        <div class="order-items">
+          <div class="order-item">
+            <span>1× Pizza Margherita</span>
+            <span>13.50€</span>
+          </div>
+          <div class="order-item">
+            <span>1× Frites Maison</span>
+            <span>4.50€</span>
+          </div>
+          <div class="order-item">
+            <span>1× Coca-Cola</span>
+            <span>2.50€</span>
+          </div>
+        </div>
+        <div class="order-footer">
+          <span class="order-total">20.50€</span>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Navigation bas -->
+    <nav class="bottom-nav">
+      <router-link to="/" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span>Accueil</span>
+      </router-link>
+      <router-link to="/historique" class="nav-item active">
+        <span class="nav-icon">📋</span>
+        <span>Commandes</span>
+      </router-link>
+      <router-link to="/panier" class="nav-item">
+        <span class="nav-icon">🛒</span>
+        <span>Panier</span>
+      </router-link>
+    </nav>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HistoriqueView'
+}
+</script>
