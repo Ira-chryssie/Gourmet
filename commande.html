@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vos Informations - Le Petit Gourmet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="panier.html" class="back-btn">←</a>
+      <div class="logo">
+        <span>Vos Informations</span>
+      </div>
+      <div style="width: 40px;"></div>
+    </div>
+  </header>
+
+  <main class="form-container">
+    
+    <form onsubmit="window.location.href='confirmation.html'; return false;">
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nom *</label>
+          <input type="text" class="form-input" placeholder="DUPONT" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Prénom *</label>
+          <input type="text" class="form-input" placeholder="Jean" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email *</label>
+        <input type="email" class="form-input" placeholder="jean.dupont@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Téléphone *</label>
+        <input type="tel" class="form-input" placeholder="+33 6 12 34 56 78" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Instructions spéciales (optionnel)</label>
+        <input type="text" class="form-input" placeholder="Allergies, instructions de retrait...">
+      </div>
+
+      <!-- Récapitulatif -->
+      <div class="form-recap">
+        <div class="form-recap-title">Récapitulatif</div>
+        <div class="form-recap-row">
+          <span>3 articles</span>
+          <span>37.70€</span>
+        </div>
+        <div class="form-recap-row">
+          <span>Frais de service</span>
+          <span>1.89€</span>
+        </div>
+        <div class="form-recap-total">
+          <span>Total à payer</span>
+          <span>39.59€</span>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        CONFIRMER LA COMMANDE
+      </button>
+
+      <button type="button" class="secondary-btn" onclick="window.location.href='panier.html'">
+        ← Retour au panier
+      </button>
+
+    </form>
+
+  </main>
+
+</body>
+</html>

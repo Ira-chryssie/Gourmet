@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Panier - Le Petit Gourmet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="back-btn">←</a>
+      <div class="logo">
+        <span>Mon Panier</span>
+      </div>
+      <div style="width: 40px;"></div>
+    </div>
+  </header>
+
+  <main class="form-container">
+    
+    <!-- Article 1 -->
+    <div class="cart-item">
+      <div class="cart-item-header">
+        <div>
+          <div class="cart-item-title">🍔 Burger Classic</div>
+          <div class="cart-item-price">12.90€ × 2</div>
+        </div>
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="cart-item-controls">
+        <div class="qty-controls">
+          <button class="qty-btn">-</button>
+          <span class="qty-value">2</span>
+          <button class="qty-btn">+</button>
+        </div>
+        <span class="cart-item-total">25.80€</span>
+      </div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="cart-item">
+      <div class="cart-item-header">
+        <div>
+          <div class="cart-item-title">🍰 Tiramisu</div>
+          <div class="cart-item-price">6.90€ × 1</div>
+        </div>
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="cart-item-controls">
+        <div class="qty-controls">
+          <button class="qty-btn">-</button>
+          <span class="qty-value">1</span>
+          <button class="qty-btn">+</button>
+        </div>
+        <span class="cart-item-total">6.90€</span>
+      </div>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="cart-item">
+      <div class="cart-item-header">
+        <div>
+          <div class="cart-item-title">🥤 Coca-Cola</div>
+          <div class="cart-item-price">2.50€ × 2</div>
+        </div>
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="cart-item-controls">
+        <div class="qty-controls">
+          <button class="qty-btn">-</button>
+          <span class="qty-value">2</span>
+          <button class="qty-btn">+</button>
+        </div>
+        <span class="cart-item-total">5.00€</span>
+      </div>
+    </div>
+
+    <!-- Résumé -->
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Sous-total</span>
+        <span>37.70€</span>
+      </div>
+      <div class="summary-row">
+        <span>Frais de service (5%)</span>
+        <span>1.89€</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>39.59€</span>
+      </div>
+    </div>
+
+    <button class="checkout-btn" onclick="window.location.href='commande.html'">
+      PASSER LA COMMANDE
+    </button>
+
+  </main>
+
+</body>
+</html>

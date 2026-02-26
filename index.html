@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Petit Gourmet - Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-icon">🍽️</span>
+        <span>Le Petit Gourmet</span>
+      </div>
+      <button class="cart-btn" onclick="window.location.href='panier.html'">
+        🛒 <span>2</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Recherche -->
+  <div class="search-container">
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" placeholder="Rechercher un plat...">
+    </div>
+  </div>
+
+  <!-- Catégories -->
+  <div class="categories">
+    <button class="category-btn active">Tous</button>
+    <button class="category-btn">Entrées</button>
+    <button class="category-btn">Plats</button>
+    <button class="category-btn">Desserts</button>
+    <button class="category-btn">Boissons</button>
+  </div>
+
+  <!-- Liste des plats -->
+  <main class="menu-container">
+    
+  
+    <div class="plat-card">
+      <div class="plat-image">🍔</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Burger Classic</h3>
+          <span class="plat-prix">12.90€</span>
+        </div>
+        <p class="plat-description">Pain buns, steak haché, fromage, salade, tomate, oignons</p>
+        <div class="plat-footer">
+          <span class="plat-category">Plat</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="plat-card">
+      <div class="plat-image">🍝</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Pasta Carbonara</h3>
+          <span class="plat-prix">14.50€</span>
+        </div>
+        <p class="plat-description">Pâtes fraîches, œufs, lardons, parmesan, crème</p>
+        <div class="plat-footer">
+          <span class="plat-category">Plat</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="plat-card">
+      <div class="plat-image">🥗</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Salade César</h3>
+          <span class="plat-prix">11.00€</span>
+        </div>
+        <p class="plat-description">Laitue romaine, poulet grillé, croûtons, parmesan, sauce césar</p>
+        <div class="plat-footer">
+          <span class="plat-category">Entrée</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="plat-card">
+      <div class="plat-image">🍕</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Pizza Margherita</h3>
+          <span class="plat-prix">13.50€</span>
+        </div>
+        <p class="plat-description">Tomate, mozzarella fraîche, basilic, huile d'olive</p>
+        <div class="plat-footer">
+          <span class="plat-category">Plat</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plat-card">
+      <div class="plat-image">🍰</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Tiramisu</h3>
+          <span class="plat-prix">6.90€</span>
+        </div>
+        <p class="plat-description">Mascarpone, café, biscuits, cacao, œufs</p>
+        <div class="plat-footer">
+          <span class="plat-category">Dessert</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="plat-card">
+      <div class="plat-image">🥤</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Coca-Cola</h3>
+          <span class="plat-prix">2.50€</span>
+        </div>
+        <p class="plat-description">33cl - Canette</p>
+        <div class="plat-footer">
+          <span class="plat-category">Boisson</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="plat-card">
+      <div class="plat-image">🍟</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Frites Maison</h3>
+          <span class="plat-prix">4.50€</span>
+        </div>
+        <p class="plat-description">Pommes de terre fraîches, sel, herbes</p>
+        <div class="plat-footer">
+          <span class="plat-category">Accompagnement</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="plat-card">
+      <div class="plat-image">🧁</div>
+      <div class="plat-info">
+        <div class="plat-header">
+          <h3 class="plat-nom">Cheesecake</h3>
+          <span class="plat-prix">6.50€</span>
+        </div>
+        <p class="plat-description">Fromage frais, spéculos, fruits rouges</p>
+        <div class="plat-footer">
+          <span class="plat-category">Dessert</span>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+      <span class="nav-icon">🏠</span>
+      <span>Accueil</span>
+    </a>
+    <a href="historique.html" class="nav-item">
+      <span class="nav-icon">📋</span>
+      <span>Commandes</span>
+    </a>
+    <a href="panier.html" class="nav-item">
+      <span class="nav-icon">🛒</span>
+      <span>Panier</span>
+    </a>
+  </nav>
+
+</body>
+</html>
