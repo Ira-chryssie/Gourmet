@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'LoginView',
   data() {
@@ -92,13 +93,20 @@ export default {
       this.validatePassword()
       if (this.errors.email || this.errors.password) return
 
-      this.loading = true
-      // TODO: remplace par un vrai appel à ton API Django
-      await new Promise(r => setTimeout(r, 1500))
+     this.loading = true
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/commandes/token/', {
+        username: this.form.email,
+        password: this.form.password
+      })
+      localStorage.setItem('token', response.data.access)
       this.loading = false
       this.success = true
-
       setTimeout(() => this.$router.push('/home'), 1500)
+    } catch (e) {
+      this.loading = false
+      alert('Email ou mot de passe incorrect.')
+    }
     }
   }
 }

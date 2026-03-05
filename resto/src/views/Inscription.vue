@@ -114,6 +114,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'InscriptionView',
   data() {
@@ -172,12 +173,21 @@ export default {
       if (Object.values(this.errors).some(e => e)) return
 
       this.loading = true
-      // TODO: remplace par un vrai appel à ton API Django
-      await new Promise(r => setTimeout(r, 1600))
+    try {
+      await axios.post('http://127.0.0.1:8000/commandes/inscription/', {
+        email: this.form.email,
+        password: this.form.password,
+        prenom: this.form.prenom,
+        nom: this.form.nom
+      })
       this.loading = false
       this.success = true
-
-      setTimeout(() => this.$router.push('/home'), 1800)
+      setTimeout(() => this.$router.push('/login'), 1800)
+      } catch (e) {
+      this.loading = false
+      const msg = e.response?.data?.erreur || "Erreur lors de l'inscription."
+      alert(msg)
+    }
     }
   }
 }

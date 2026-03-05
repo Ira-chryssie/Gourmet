@@ -103,7 +103,10 @@ export default {
   },
   async mounted() {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/commandes/plats/')
+      const token = localStorage.getItem('token')
+      const response = await axios.get('http://127.0.0.1:8000/commandes/plats/', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
       this.plats = response.data.results
     } catch (e) {
       this.erreur = "Impossible de charger les plats."
