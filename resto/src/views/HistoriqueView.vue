@@ -12,82 +12,34 @@
 
     <main class="menu-container">
 
-      <!-- Commande 1 -->
-      <div class="order-card">
+      <!-- Chargement -->
+      <div v-if="chargement" style="text-align:center; padding: 40px;">
+        ⏳ Chargement...
+      </div>
+
+      <!-- Commandes venant de Django -->
+      <div class="order-card" v-for="commande in commandes" :key="commande.id">
         <div class="order-header">
           <div>
-            <div class="order-id">#142</div>
-            <div class="order-date">15 janvier 2024 à 12h30</div>
+            <div class="order-id">#{{ commande.id }}</div>
+            <div class="order-date">{{ commande.date_commande }}</div>
           </div>
-          <span class="order-status retiree">RETIRÉE</span>
+          <span class="order-status en-attente">{{ commande.statut }}</span>
         </div>
         <div class="order-items">
-          <div class="order-item">
-            <span>2× Burger Classic</span>
-            <span>25.80€</span>
-          </div>
-          <div class="order-item">
-            <span>2× Coca-Cola</span>
-            <span>5.00€</span>
+          <div class="order-item" v-for="ligne in commande.lignes" :key="ligne.id">
+            <span>{{ ligne.quantite }}× {{ ligne.plat_nom }}</span>
           </div>
         </div>
         <div class="order-footer">
-          <span class="order-total">30.80€</span>
-          <button class="secondary-btn" style="width: auto; margin: 0;">Commander à nouveau →</button>
+          <span class="order-total">Client #{{ commande.client }}</span>
         </div>
       </div>
 
-      <!-- Commande 2 -->
-      <div class="order-card">
-        <div class="order-header">
-          <div>
-            <div class="order-id">#143</div>
-            <div class="order-date">18 janvier 2024 à 19h15</div>
-          </div>
-          <span class="order-status prete">PRÊTE !</span>
-        </div>
-        <div class="order-items">
-          <div class="order-item">
-            <span>1× Pasta Carbonara</span>
-            <span>14.50€</span>
-          </div>
-          <div class="order-item">
-            <span>1× Tiramisu</span>
-            <span>6.90€</span>
-          </div>
-        </div>
-        <div class="order-footer">
-          <span class="order-total">21.40€</span>
-          <button style="background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; cursor: pointer;">🔔 Me prévenir</button>
-        </div>
-      </div>
-
-      <!-- Commande 3 -->
-      <div class="order-card">
-        <div class="order-header">
-          <div>
-            <div class="order-id">#144</div>
-            <div class="order-date">20 janvier 2024 à 13h00</div>
-          </div>
-          <span class="order-status en-preparation">EN PRÉPARATION</span>
-        </div>
-        <div class="order-items">
-          <div class="order-item">
-            <span>1× Pizza Margherita</span>
-            <span>13.50€</span>
-          </div>
-          <div class="order-item">
-            <span>1× Frites Maison</span>
-            <span>4.50€</span>
-          </div>
-          <div class="order-item">
-            <span>1× Coca-Cola</span>
-            <span>2.50€</span>
-          </div>
-        </div>
-        <div class="order-footer">
-          <span class="order-total">20.50€</span>
-        </div>
+      <!-- Aucune commande -->
+      <div v-if="!chargement && commandes.length === 0" class="empty-cart">
+        <div class="empty-cart-icon">📋</div>
+        <p class="empty-cart-text">Aucune commande trouvée</p>
       </div>
 
     </main>
@@ -112,7 +64,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'HistoriqueView'
+  name: 'HistoriqueView',
+  data() {
+    return {
+      commandes: [],
+      chargement: true
+    }
+  },
+  async mounted() {
+    try {
+      const response = await axios.get('http://127.0.0.1:8000/commandes/commandes/')
+      this.commandes = response.data
+    } catch (e) {
+      console.error("Erreur chargement commandes", e)
+    } finally {
+      this.chargement = false
+    }
+  }
 }
 </script>

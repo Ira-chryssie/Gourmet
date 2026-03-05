@@ -4,12 +4,28 @@ import PanierView from '../views/PanierView.vue'
 import CommandeView from '../views/CommandeView.vue'
 import ConfirmationView from '../views/ConfirmationView.vue'
 import HistoriqueView from '../views/HistoriqueView.vue'
+import LoginView from '../views/Login.vue'
+import InscriptionView from '../views/Inscription.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      redirect: '/login'
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
+    },
+    {
+      path: '/inscription',
+      name: 'inscription',
+      component: InscriptionView
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView
     },
